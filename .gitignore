@@ -1,0 +1,3 @@
+# What: all powershell bootstrap stuff
+# Why: fetched by build script automatically
+/.bootstrap
