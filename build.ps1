@@ -70,13 +70,8 @@ Function Main {
         }
         # Installation of Scoop, Python and pipenv via bootstrap
         $bootstrapSource = 'https://raw.githubusercontent.com/avengineers/bootstrap/develop/bootstrap.ps1'
-        if ($Env:GITHUB_HEAD_REF){
-            $bootstrapSource = "https://raw.githubusercontent.com/avengineers/bootstrap/$Env:GITHUB_HEAD_REF/bootstrap.ps1"
-            Write-Output "Downloading bootstrap from $bootstrapSource ..."
-        }
         Invoke-RestMethod $bootstrapSource -OutFile '.\.bootstrap\bootstrap.ps1'
         Invoke-CommandLine '. .\.bootstrap\bootstrap.ps1' -Silent $true
-        Write-Output "For installation changes to take effect, please close and re-open your current shell."
     }
     else {
         # Do nothing
